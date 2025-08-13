@@ -91,7 +91,7 @@ export default function Clients() {
           {brands.map((brand) => (
             <div
               key={brand.name}
-              className="flex flex-wrap justify-center items-center size-48 p-12 rounded-lg bg-white/5 border border-white/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group"
+              className="flex flex-wrap justify-center items-center size-32 sm:size-48 p-4 sm:p-12 rounded-lg bg-white/5 border border-white/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group"
             >
               {brand.logo}
             </div>
