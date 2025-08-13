@@ -41,10 +41,8 @@ export function ServiceCard({
         shadow-lg transition-shadow duration-500 perspective-distant
         transform-gpu will-change-transform
         overflow-hidden border border-white/10
-        ${featured ? "sm:col-span-2 lg:col-span-30 mx-20 animate-bg-image bg-gradient-to-l from-indigo-800/30 via-blue-800/30 to-indigo-800/30" : ""}
+        ${featured ? "sm:col-span-2 lg:col-span-3 mx-20 animate-bg-image bg-gradient-to-l from-indigo-800/30 via-blue-800/30 to-indigo-800/30" : ""}
         `}
-      // ${featured ? "sm:col-span-2 lg:col-span-3 bg-gradient-to-br from-cyan-600/80 via-teal-500/70 to-blue-400/60"
-      //   : ""}
       style={{
         transform: cardTransform,
         transformStyle: "preserve-3d",
