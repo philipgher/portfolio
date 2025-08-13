@@ -41,7 +41,7 @@ export function ServiceCard({
         shadow-lg transition-shadow duration-500 perspective-distant
         transform-gpu will-change-transform
         overflow-hidden border border-white/10
-        ${featured ? "sm:col-span-2 lg:col-span-3 mx-20 animate-bg-image bg-gradient-to-l from-indigo-800/30 via-blue-800/30 to-indigo-800/30" : ""}
+        ${featured ? "sm:col-span-2 lg:col-span-3 sm:mx-20 animate-bg-image bg-gradient-to-l from-indigo-800/30 via-blue-800/30 to-indigo-800/30" : ""}
         `}
       style={{
         transform: cardTransform,
