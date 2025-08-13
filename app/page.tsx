@@ -5,6 +5,7 @@ import { StrongUnderline } from "./_components/StrongUnderline";
 import { DriftingShapes } from "./_components/DriftingShapes";
 import FloatingCoffeeButton from "./_components/FloatingCoffeeButton";
 import { Contact } from "./_components/Contact";
+import Clients from "./_components/Clients";
 
 export default function Portfolio() {
   return (
@@ -62,6 +63,7 @@ export default function Portfolio() {
 
       <Services />
       <Expertises />
+      <Clients />
 
       <Contact />
 

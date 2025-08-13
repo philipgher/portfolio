@@ -13,6 +13,7 @@ export default function FloatingCoffeeMenu() {
         type="button"
         onClick={() => setIsOpen(!isOpen)}
         className="relative p-4 sm:p-5 rounded-full 
+                  cursor-pointer
                    bg-gradient-to-br from-indigo-500 via-purple-600 to-pink-500
                    shadow-lg hover:shadow-xl 
                    transition-all duration-300 
