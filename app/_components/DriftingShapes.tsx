@@ -23,18 +23,17 @@ export function DriftingShapes() {
 
   return (
     <div
+      className="absolute w-full h-full top-0 left-0"
       style={{
-        transform: `rotate(${rotationShift}deg) scale(${scaleShift})`
+        transform: `rotate(${rotationShift}deg) scale(${scaleShift})`,
+        filter: `hue-rotate(${hueShift}deg)`,
       }}
     >
       <div
-        className="w-full h-full absolute animate-pulse-spin"
-        style={{
-          filter: `hue-rotate(${hueShift}deg)`
-        }}
+        className="w-full h-full animate-pulse-spin"
       >
-        <div className="absolute -top-16 -left-16 w-48 h-48 bg-pink-500/30 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-20 -right-20 w-56 h-56 bg-purple-600/30 rounded-full blur-3xl"></div>
+        <div className="absolute -top-1/5 -left-1/5 w-1/2 h-1/2 bg-pink-500/30 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-1/5 -right-1/5 w-1/2 h-1/2 bg-purple-600/30 rounded-full blur-3xl"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2/3 h-2/3 bg-blue-700/20 rounded-full blur-3xl"></div>
       </div>
     </div>

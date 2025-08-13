@@ -71,8 +71,8 @@ export function Expertises() {
       id="skills"
       className="p-6 my-20 max-w-4xl mx-auto"
     >
-      <h2 className="text-4xl font-bold text-center mb-8 animate-bg-image bg-repeat bg-gradient-to-r from-indigo-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">
-        My expertises
+      <h2 className="text-4xl font-bold text-center mb-12 animate-bg-image bg-repeat bg-gradient-to-r from-indigo-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">
+        My Expertises
       </h2>
 
       <div className="grid grid-cols-1 row-auto sm:grid-cols-2 gap-8">

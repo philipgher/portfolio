@@ -32,7 +32,8 @@ export default function Portfolio() {
         </div>
 
         <div
-          className="bg-gradient-to-br from-indigo-900/90 via-purple-900/80 to-pink-900/80 backdrop-blur-xl shadow-[0_0_40px_rgba(236,72,153,0.15)] border-y border-purple-500/30 overflow-hidden group py-4"
+          // className="bg-gradient-to-br from-indigo-900/90 via-purple-900/80 to-pink-900/80 backdrop-blur-xl shadow-[0_0_40px_rgba(236,72,153,0.15)] border-y border-purple-500/30 overflow-hidden group py-4"
+          className="relative border-y border-purple-500/30 overflow-hidden group py-4"
         >
           <DriftingShapes />
 

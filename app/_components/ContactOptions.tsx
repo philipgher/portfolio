@@ -35,29 +35,33 @@ export const contacts = [
   {
     icon: <MailIcon />,
     href: "mailto:pghering@me.com",
-    color: "bg-pink-500"
+    color: "bg-pink-500",
+    srText: "Email me",
   },
   {
     icon: <LinkedinIcon />,
     href: "https://www.linkedin.com/in/philip-ghering-942460115/",
-    color: "bg-blue-600"
+    color: "bg-blue-600",
+    srText: "Connect on LinkedIn"
   },
-  {
-    icon: <GithubIcon />,
-    href: "https://github.com/philipgher",
-    color: "bg-gray-800"
-  },
+  // {
+  //   icon: <GithubIcon />,
+  //   href: "https://github.com/philipgher",
+  //   color: "bg-gray-800",
+  //   srText: "View my GitHub"
+  // },
   {
     icon: <DiscordIcon />,
     href: "https://discordapp.com/users/786879227466874891",
-    color: "bg-indigo-800"
+    color: "bg-indigo-800",
+    srText: "Chat with me on Discord",
   },
 ];
 
 export function ContactOptions({ isOpen }: { isOpen: boolean }) {
   return contacts.map((contact, i) => (
     <a
-      key={i}
+      key={contact.href}
       href={contact.href}
       target="_blank"
       rel="noopener noreferrer"
@@ -66,6 +70,7 @@ export function ContactOptions({ isOpen }: { isOpen: boolean }) {
       style={{ transitionDelay: `${(isOpen ? 1 : -1) * i * 0.02}s` }}
     >
       {contact.icon}
+      <span className="sr-only">{contact.srText}</span>
     </a>
   ))
 }

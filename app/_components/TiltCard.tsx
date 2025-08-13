@@ -1,6 +1,7 @@
 'use client';
 
 import { MouseEventHandler, useState } from "react";
+import { DriftingShapes } from "./DriftingShapes";
 
 export function TiltCard({
   category,
@@ -16,73 +17,69 @@ export function TiltCard({
     const x = e.clientX - left;
     const y = e.clientY - top;
 
-    const rotateX = ((y / height) - 0.5) * 30;
-    const rotateY = ((x / width) - 0.5) * 30;
+    const rotateX = ((y / height) - 0.5) * 20;
+    const rotateY = ((x / width) - 0.5) * 20;
 
     setRotation({ rotateX, rotateY });
   };
 
   const resetRotation = () => setRotation({ rotateX: 0, rotateY: 0 });
 
-  const cardTransform = `rotateX(${-rotation.rotateX}deg) rotateY(${rotation.rotateY}deg) scale(1.05)`;
-
-  const shadowX = -rotation.rotateY * 0.6;
-  const shadowY = rotation.rotateX * 0.6;
+  const cardTransform = `rotateX(${-rotation.rotateX}deg) rotateY(${rotation.rotateY}deg)`;
 
   return (
     <div
-      className="perspective-distant cursor-pointer"
+      className="perspective-distant relative"
       onMouseMove={handleMouseMove}
       onMouseLeave={resetRotation}
     >
-      {/* Depth shadow */}
       <div
-        aria-hidden="true"
-        className="absolute inset-0 rounded-lg bg-purple-500/50 blur-lg pointer-events-none"
-        style={{
-          transform: `translateX(${shadowX}px) translateY(${shadowY}px) scale(1)`,
-          zIndex: 0,
-        }}
-      ></div>
-
-      {/* Main Card */}
-      <div
-        className="h-full
-          p-6 rounded-lg text-white
-          bg-gradient-to-br from-indigo-950 via-purple-950 to-blue-900
-          shadow-xl transition-shadow duration-500 will-change-transform
-          border border-white/10
-        "
+        className="relative p-6 rounded-lg bg-gradient-to-br from-slate-900 to-slate-800 
+                   border border-white/10 shadow-md hover:shadow-lg 
+                   transition-all duration-300
+                   h-full
+                   overflow-hidden"
         style={{
           transform: cardTransform,
           transformStyle: "preserve-3d",
-          transition: "transform 0.15s ease",
-          zIndex: 10,
+          transition: "transform 0.15s ease"
         }}
       >
-        {/* Glow edge effect */}
-        <div className="absolute inset-0 rounded-lg border border-pink-400/40 pointer-events-none"></div>
+        <DriftingShapes />
 
-        {/* Hover color overlay */}
-        <div className="
-          absolute inset-0 rounded-lg
-          bg-gradient-to-r from-purple-700 via-pink-600 to-red-500
-          opacity-0 hover:opacity-20 transition-opacity duration-500
-          pointer-events-none mix-blend-screen
-        "></div>
+        <h3 className="text-xl font-semibold mb-4 text-slate-100">{category}</h3>
 
-        <h3 className="text-xl font-semibold mb-4 drop-shadow-md">{category}</h3>
-        <ul className="list-none space-y-2 text-sm">
-          {items.map((item) => (
-            <li
+        <div className="flex flex-wrap gap-2">
+          {items.map((item, i) => (
+            <span
               key={item}
-              className="before:content-['•'] before:text-pink-400 before:mr-2"
+              className="px-3 py-1 text-sm rounded-full 
+                         bg-white/5 border border-white/10 
+                         text-slate-200 hover:bg-white/10 
+                         transition-colors duration-200"
+              style={{
+                animation: `fadeIn 0.3s ease-out ${i * 0.05}s both`,
+                transform: `translateZ(15px)`
+              }}
             >
               {item}
-            </li>
+            </span>
           ))}
-        </ul>
+        </div>
       </div>
+
+      <style>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(4px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </div>
   );
 }
