@@ -4,10 +4,11 @@ import { Services } from "./_components/Services";
 import { StrongUnderline } from "./_components/StrongUnderline";
 import { DriftingShapes } from "./_components/DriftingShapes";
 import FloatingCoffeeButton from "./_components/FloatingCoffeeButton";
+import { Contact } from "./_components/Contact";
 
 export default function Portfolio() {
   return (
-    <div className="font-sans text-gray-400">
+    <div className="font-sans text-gray-400 pb-20">
       <header className="max-w-4xl mx-auto p-6 mb-12 mt-6">
         <h1 className="text-3xl font-bold animate-bg-image bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent">
           Philip Ghering
@@ -25,13 +26,12 @@ export default function Portfolio() {
         className="mb-20 mx-auto"
       >
         <div className="max-w-4xl mx-auto">
-          <h2 className="px-6 text-2xl leading-relaxed max-w-2xl mb-20">
+          <h2 className="px-6 text-2xl leading-relaxed max-w-2xl my-20 lg:mt-32 lg:mb-52">
             I&apos;m a <strong>full-stack Node.js developer</strong> with over <strong>7 years of experience</strong> turning ideas into user-friendly, scalable, and secure cloud applications. My background in <strong>UX design</strong> means I don&apos;t just build features — I craft experiences that people enjoy using.
           </h2>
         </div>
 
         <div
-          // className="lg:mx-auto lg:max-w-3xl lg:px-6 bg-gradient-to-br from-indigo-900/90 via-purple-900/80 to-pink-900/80 backdrop-blur-xl px-6 py-10 lg:p-10 lg:rounded-3xl shadow-[0_0_40px_rgba(236,72,153,0.15)] border border-purple-500/30 overflow-hidden group"
           className="bg-gradient-to-br from-indigo-900/90 via-purple-900/80 to-pink-900/80 backdrop-blur-xl shadow-[0_0_40px_rgba(236,72,153,0.15)] border-y border-purple-500/30 overflow-hidden group py-4"
         >
           <DriftingShapes />
@@ -62,7 +62,9 @@ export default function Portfolio() {
       <Services />
       <Expertises />
 
+      <Contact />
+
       <FloatingCoffeeButton />
-    </div >
+    </div>
   );
 }
