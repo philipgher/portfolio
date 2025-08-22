@@ -87,7 +87,7 @@ export default function Clients() {
           I&apos;ve contributed to projects for world-renowned brands while working at award-winning agencies and as an individual contributor.
         </p>
 
-        <div className="flex flex-wrap gap-8 justify-center items-center max-w-3xl mx-auto">
+        <div className="flex flex-wrap gap-8 justify-center items-center max-w-3xl mx-auto text-gray-400">
           {brands.map((brand) => (
             <div
               key={brand.name}
