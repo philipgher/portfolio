@@ -14,12 +14,6 @@ export default function Portfolio() {
         <h1 className="text-3xl font-bold animate-bg-image bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent">
           Philip Ghering
         </h1>
-        {/* <nav className="space-x-6 text-gray-700 font-medium">
-          <a href="#about" className="hover:text-blue-600">About</a>
-          <a href="#skills" className="hover:text-blue-600">Skills</a>
-          <a href="#projects" className="hover:text-blue-600">Projects</a>
-          <a href="#contact" className="hover:text-blue-600">Contact</a>
-      </nav> */}
       </header>
 
       <section
