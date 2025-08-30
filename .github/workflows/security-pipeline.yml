@@ -42,14 +42,63 @@ jobs:
           directory: .
 
   dast:
-    name: Dynamic Analysis (DAST)
+    name: Dynamic Analysis (DAST) ZAP Full Scan
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: OWASP ZAP Baseline Scan
-        uses: zaproxy/zap-stable:latest
+      - name: OWASP ZAP Full Scan
+        uses: zaproxy/action-full-scan@v0.12.0
         with:
           target: 'https://philipghering.nl'
+
+# 1️⃣ ZAP API Scan
+# Purpose: Targets API endpoints (REST, SOAP, GraphQL) rather than HTML web apps.
+# How it works:
+# You give it an OpenAPI/Swagger definition, SOAP WSDL, or a list of endpoints.
+# ZAP spidering is skipped — it uses the definition to know what to hit.
+# Performs active scanning of those endpoints for vulnerabilities like injection, auth flaws, etc.
+# When to use:
+# Securing backend APIs before they’re exposed publicly.
+# CI/CD testing of microservices without a UI.
+# OWASP Top 10 focus: A01 (Broken Access Control), A03 (Injection), A07 (Auth Failures).
+
+# 2️⃣ ZAP Baseline Scan
+# Purpose: Quick, safe, passive scan of a web app.
+# How it works:
+# Runs a short spider (default ~1 min) to discover pages.
+# Passive scan only — inspects traffic for security issues without sending attack payloads.
+# No form submissions, no destructive actions.
+# When to use:
+# On every pull request or commit to staging — fast feedback without risk of breaking things.
+# Continuous monitoring of a live site without impacting users.
+# OWASP Top 10 focus: A02 (Crypto Failures), A05 (Misconfig), A06 (Outdated Components).
+
+# 3️⃣ ZAP Full Scan
+# Purpose: Comprehensive, active scan of a web app.
+# How it works:
+# Full spider (no time limit by default) + optional AJAX spider for JS-heavy sites.
+# Active scan — sends attack payloads to test for vulnerabilities.
+# Will submit forms, follow links, and potentially trigger actions in the app.
+# When to use:
+# Scheduled scans against a staging environment you control.
+# Pre-release security gate before production deploy.
+# OWASP Top 10 focus: Broad coverage — especially A01, A03, A07, A10 (SSRF).
+# ⚠️ Warning: Because it’s aggressive, only run against systems you own and have permission to test.
+
+# 4️⃣ ZAP Automation Framework Plan
+# Purpose: Custom, scriptable DAST — the most flexible option.
+# How it works:
+# You write a YAML “plan” defining exactly what ZAP should do: which spiders, which active scans, which contexts, which rules to ignore, etc.
+# Can chain multiple scans, set thresholds, integrate with other tools.
+# When to use:
+# Mature DevSecOps setups that need fine-grained control.
+# Complex apps where you want to tailor scanning to specific flows or environments.
+# OWASP Top 10 focus: Whatever you configure — you can target specific categories or go broad.
+# 💡 How to slot them into a pipeline
+# PR builds: Baseline Scan (fast, non-invasive)
+# Nightly builds: Full Scan (deep, active)
+# API services: API Scan
+# Special cases / compliance: Automation Framework Plan
 
   secrets_scan:
     name: Secrets Detection
