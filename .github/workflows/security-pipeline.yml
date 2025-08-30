@@ -47,7 +47,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: OWASP ZAP Baseline Scan
-        uses: zaproxy/action-baseline@v0.8.0
+        uses: zaproxy/zap-stable@latest
         with:
           target: 'https://philipghering.nl'
 
