@@ -1,17 +1,7 @@
 import type { Metadata } from "next";
-// import { Geist, Geist_Mono } from "next/font/google";
 import { Archivo } from 'next/font/google'
 import "./globals.css";
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
+import FloatingCoffeeButton from "./_components/FloatingCoffeeButton";
 
 const archivo = Archivo({
   variable: "--font-archivo",
@@ -38,6 +28,8 @@ export default function RootLayout({
         className={`${archivo.className} antialiased`}
       >
         {children}
+
+        <FloatingCoffeeButton />
       </body>
     </html>
   );

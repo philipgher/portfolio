@@ -2,13 +2,19 @@
 
 import { MouseEventHandler, useState } from "react";
 import { DriftingShapes } from "./DriftingShapes";
+import Link from "next/link";
 
 export function TiltCard({
   category,
-  items
+  items,
+  featureLink,
 }: {
   category: string;
   items: string[];
+  featureLink?: {
+    label: string;
+    link: string;
+  };
 }) {
   const [rotation, setRotation] = useState({ rotateX: 0, rotateY: 0 });
 
@@ -66,6 +72,33 @@ export function TiltCard({
             </span>
           ))}
         </div>
+
+        {/* {featureLink && (
+          <Link
+            href={featureLink.link}
+            className="group mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
+                       text-white font-medium shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300
+                       focus:outline-none focus:ring-2 focus:ring-indigo-400"
+          >
+            <span className="relative z-10">{featureLink.label}</span>
+            <svg
+              className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform duration-200"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+            <span
+              className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              style={{
+                background: "radial-gradient(circle at 70% 30%, rgba(255,255,255,0.15) 0%, transparent 70%)",
+                zIndex: 1,
+              }}
+            />
+          </Link>
+        )} */}
       </div>
 
       <style>{`

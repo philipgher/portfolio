@@ -1,6 +1,6 @@
 'use client';
 
-import { MouseEventHandler, useState } from "react";
+import { type JSX, type MouseEventHandler, useState } from "react";
 import { DriftingShapes } from "./DriftingShapes";
 
 export function ServiceCard({
@@ -11,7 +11,7 @@ export function ServiceCard({
 }: {
   title: string;
   description: string;
-  icon: string;
+  icon: string | JSX.Element;
   featured?: boolean;
 }) {
   const [rotation, setRotation] = useState({ rotateX: 0, rotateY: 0 });
@@ -53,11 +53,14 @@ export function ServiceCard({
       <div
         className={`
           mb-6 select-none
-          ${featured ? "text-6xl" : "text-4xl"}
+          ${typeof icon === 'string'
+            ? featured ? "text-6xl" : "text-4xl"
+            : featured ? "size-16" : "size-9"}
         `}
         aria-hidden="true"
+        dangerouslySetInnerHTML={typeof icon === 'string' ? { __html: icon } : undefined}
       >
-        {icon}
+        {typeof icon === 'string' ? undefined : icon}
       </div>
       <h3 className={`text-xl font-extrabold ${featured ? "text-white" : "font-semibold mb-2"}`}>
         {title}

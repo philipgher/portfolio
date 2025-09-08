@@ -3,7 +3,6 @@ import { Expertises } from "./_components/Expertises";
 import { Services } from "./_components/Services";
 import { StrongUnderline } from "./_components/StrongUnderline";
 import { DriftingShapes } from "./_components/DriftingShapes";
-import FloatingCoffeeButton from "./_components/FloatingCoffeeButton";
 import { Contact } from "./_components/Contact";
 import Clients from "./_components/Clients";
 
@@ -60,8 +59,6 @@ export default function Portfolio() {
       <Clients />
 
       <Contact />
-
-      <FloatingCoffeeButton />
     </div>
   );
 }
