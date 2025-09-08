@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Archivo } from 'next/font/google'
 import "./globals.css";
 import FloatingCoffeeButton from "./_components/FloatingCoffeeButton";
+import { Analytics } from "@vercel/analytics/next";
 
 const archivo = Archivo({
   variable: "--font-archivo",
@@ -30,6 +31,8 @@ export default function RootLayout({
         {children}
 
         <FloatingCoffeeButton />
+
+        <Analytics />
       </body>
     </html>
   );
