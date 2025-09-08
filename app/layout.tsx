@@ -31,6 +31,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="google-site-verification" content="fAI9FIFLZXjoM_aZMYg7N1WebaaQf0-Mi9lW9tJv0Gg" />
+      </head>
       <body
         className={`${archivo.className} antialiased`}
       >
