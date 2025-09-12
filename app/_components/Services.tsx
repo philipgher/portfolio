@@ -23,13 +23,6 @@ const services = [
     featured: false,
   },
   {
-    title: "Performance Optimization",
-    description:
-      "Improving app speed, accessibility, and scalability to ensure smooth user experiences on any device.",
-    icon: "⚡",
-    featured: false,
-  },
-  {
     title: "Creative Interactive Experiences",
     description:
       "Developing engaging, interactive projects using ThreeJS, PixiJS, React Spring for unique digital experiences.",
@@ -37,10 +30,10 @@ const services = [
     featured: false,
   },
   {
-    title: "Security & Auth Integration",
+    title: "AI-Powered Solutions",
     description:
-      "Implementing best practices in authentication (OAuth2, JWT, Auth0) and API security to keep applications safe.",
-    icon: "🔐",
+      "Integrate advanced AI features, including contextual search, retrieval-augmented generation (RAG), and personalized recommendations for enhanced user experiences.",
+    icon: "🤖",
     featured: false,
   },
   {
@@ -48,7 +41,7 @@ const services = [
     description:
       "Providing expert advice on architecture, technology choices, code reviews, and best practices to help your project succeed.",
     icon: "💡",
-    featured: true,
+    featured: false,
   },
 ];
 

@@ -22,16 +22,21 @@ const skillsData = [
     ],
   },
   {
+    category: "🤖 AI",
+    items: [
+      "OpenAI API, LangChain, Hugging Face, Tensorflow",
+      "Prompt engineering, RAG, LLM orchestration",
+      "AI-powered search, chatbots, assistants",
+      "Responsible AI, privacy, ethics",
+    ],
+  },
+  {
     category: "🛠️ CMS's & Integrations",
     items: [
       "Payload, Contentful, Sanity, Strapi, Umbraco Headless",
       "Shopify, Stripe",
       "AWS S3, Cloudinary",
     ],
-    featureLink: {
-      label: "Why I choose Payload CMS",
-      link: "/payloadcms-expertise",
-    }
   },
   {
     category: "☁️ DevOps & Cloud",
@@ -82,12 +87,11 @@ export function Expertises() {
       </h2>
 
       <div className="grid grid-cols-1 row-auto sm:grid-cols-2 gap-8">
-        {skillsData.map(({ category, items, featureLink }) => (
+        {skillsData.map(({ category, items }) => (
           <TiltCard
             key={category}
             category={category}
             items={items}
-            featureLink={featureLink}
           />
         ))}
       </div>
