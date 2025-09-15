@@ -5,14 +5,19 @@ import { StrongUnderline } from "./_components/StrongUnderline";
 import { DriftingShapes } from "./_components/DriftingShapes";
 import { Contact } from "./_components/Contact";
 import Clients from "./_components/Clients";
+import Picture from "./_components/Picture";
 
 export default function Portfolio() {
   return (
     <div className="font-sans text-gray-400 pb-20">
-      <header className="max-w-4xl mx-auto p-6 mb-12 mt-6">
+      <header className="max-w-4xl mx-auto p-6 mb-12 mt-6 flex justify-between items-center gap-2">
         <h1 className="text-3xl font-bold animate-bg-image bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent">
           Philip Ghering
         </h1>
+
+        <div className="-my-[100%] translate-y-5 md:translate-y-10 lg:translate-y-16 hover:rotate-6 transition-transform">
+          <Picture />
+        </div>
       </header>
 
       <section
