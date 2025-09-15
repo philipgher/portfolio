@@ -10,7 +10,7 @@ import Picture from "./_components/Picture";
 export default function Portfolio() {
   return (
     <div className="font-sans text-gray-400 pb-20">
-      <header className="max-w-4xl mx-auto p-6 mb-12 mt-6 flex justify-between items-center gap-2">
+      <header className="max-w-4xl mx-auto p-6 mb-12 mt-6 flex justify-between items-center gap-4">
         <h1 className="text-3xl font-bold animate-bg-image bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent">
           Philip Ghering
         </h1>
